@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia.dart';
+import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia_entity.dart';
 
 abstract class NumberTriviaState extends Equatable {
 
@@ -16,7 +16,7 @@ class LoadingState extends NumberTriviaState {}
 
 class LoadedState extends NumberTriviaState {
 
-  final NumberTrivia trivia;
+  final NumberTriviaEntity trivia;
 
   LoadedState({required this.trivia}) : super([trivia]);
 }

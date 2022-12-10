@@ -4,7 +4,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:number_trivia/core/error/failures.dart';
 import 'package:number_trivia/core/usecases/usecase.dart';
 import 'package:number_trivia/core/util/input_converter.dart';
-import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia.dart';
+import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia_entity.dart';
 import 'package:number_trivia/features/number_trivia/domain/usecases/get_concrete_number_trivia.dart';
 import 'package:number_trivia/features/number_trivia/domain/usecases/get_random_number_trivia.dart';
 import 'package:number_trivia/features/number_trivia/presentation/bloc/number_trivia_bloc.dart';
@@ -49,7 +49,7 @@ void main(){
   final tNumberParsed = int.parse(tNumberString);
 
   // NumberTrivia instance is needed too, of course
-  final tNumberTrivia = NumberTrivia(number: 1, text: 'test trivia');
+  final tNumberTrivia = NumberTriviaEntity(number: 1, text: 'test trivia');
 
   void setUpMockInputConverterSuccess() =>
       when( () => mockInputConverter.stringToUnsignedInteger(any()))
@@ -186,7 +186,7 @@ void main(){
 
   group('GetTriviaForRandomNumber', () {
 
-    final tNumberTrivia = NumberTrivia(number: 1, text: 'test trivia');
+    final tNumberTrivia = NumberTriviaEntity(number: 1, text: 'test trivia');
 
     test(
       'should get data from the random use case',

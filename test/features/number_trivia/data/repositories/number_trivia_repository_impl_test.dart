@@ -8,7 +8,7 @@ import 'package:number_trivia/features/number_trivia/data/datasources/interfaces
 import 'package:number_trivia/features/number_trivia/data/datasources/interfaces/number_trivia_remote_data_source.dart';
 import 'package:number_trivia/features/number_trivia/data/models/number_trivia_model.dart';
 import 'package:number_trivia/features/number_trivia/data/repositories/number_trivia_repository_impl.dart';
-import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia.dart';
+import 'package:number_trivia/features/number_trivia/domain/entities/number_trivia_entity.dart';
 
 class MockRemoteDataSource extends Mock implements NumberTriviaRemoteDataSource {}
 class MockLocalDataSource extends Mock implements NumberTriviaLocalDataSource {}
@@ -38,7 +38,7 @@ void main(){
   // We'll use these three variables throughout all the tests
   final tNumber = 1;
   final tNumberTriviaModel = NumberTriviaModel(text: "test", number: 1);
-  final NumberTrivia tNumberTrivia = tNumberTriviaModel;
+  final NumberTriviaEntity tNumberTrivia = tNumberTriviaModel;
 
   void runTestsOnline(Function body){
 
